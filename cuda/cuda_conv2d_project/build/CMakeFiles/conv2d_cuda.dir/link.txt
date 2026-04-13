@@ -1,0 +1,2 @@
+/usr/bin/ar qc libconv2d_cuda.a CMakeFiles/conv2d_cuda.dir/src/conv2d.cu.o
+/usr/bin/ranlib libconv2d_cuda.a
