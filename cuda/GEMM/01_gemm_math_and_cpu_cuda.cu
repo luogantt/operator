@@ -122,6 +122,7 @@ __global__ void gemm_1thread_per_element(const float* A,
 
 int main() {
     // 这里故意使用一个很小的矩阵，便于人工验证
+    /*** 
     const int M = 2, K = 3, N = 2;
 
     // A: 2x3
@@ -136,6 +137,16 @@ int main() {
         9, 10,
         11, 12
     };
+    */
+    const int M = 8, K = 8, N = 8;
+
+    std::vector<float> hA(M*K);
+    std::vector<float> hB(K*N);
+
+    init_matrix(hA, M, K);
+    init_matrix(hB, K, N);
+
+
 
     // CPU 和 GPU 的输出
     std::vector<float> hC_cpu(M * N, 0.0f), hC_gpu(M * N, 0.0f);
